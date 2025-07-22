@@ -10,11 +10,11 @@ if(isNaN(a)){
 }
 else{
     if(a>0){
-        var fac=1;
-        for(var i=1;i<=a;i++){
-            fac *=i;
+       for(var i=1;i<=a;i++){
+        if(a%i ===0){
+            console.log(i)
         }
-        console.log(fac);
+        }
     }
     else{
         console.log("should add more than 0");
