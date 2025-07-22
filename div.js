@@ -10,11 +10,12 @@ if(isNaN(a)){
 }
 else{
     if(a>0){
-       for(var i=1;i<=a;i++){
+       for(var i=1;i<=Math.floor(a/2);i++){
         if(a%i ===0){
             console.log(i)
         }
         }
+        console.log(a)
     }
     else{
         console.log("should add more than 0");
