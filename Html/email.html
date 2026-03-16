@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid red;
+        }
+        tr:nth-child(even){
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="email" placeholder="Enter Your Email:" id="email">
+        <input type="password" placeholder="Enter Your Password:" id="password">
+        <button type="submit">Submit</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </table>
+
+
+
+        <script>
+     
+         let form = document.querySelector("form")
+         let email_box = document.querySelector("#email")
+         let password_box = document.querySelector("#password")
+         let tableJs = document.querySelector("table")
+
+         form.addEventListener("submit", display)
+
+         function display(e){
+            e.preventDefault()
+            if(!email_box.value || !password_box.value){
+              return
+            }
+           let newRow = document.createElement("tr")
+           let td1 = document.createElement("td")
+           let td2 = document.createElement("td")
+           td1.innerText = email_box.value 
+           td2.innerText = password_box.value
+           newRow.append(td1,td2)
+           tableJs.append(newRow)
+            
+           email_box.value  = ""
+           password_box.value = ""
+
+
+         }
+
+        </script>
+    </form>
+</body>
+</html>

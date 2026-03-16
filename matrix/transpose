@@ -1,0 +1,14 @@
+let mat=[
+    [1,1,1]
+   ,[2,2,2]
+   ,[3,3,3]
+]
+let tee=[]
+for(let i=0;i<mat[0].length;i++){
+    let temp=[]
+    for(let j=0;j<mat.length;j++){
+        temp.push(mat[j][i])
+    }
+    tee.push(temp)
+}
+console.log(tee)

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <input type="number" placeholder="amount">
+        <button type="submit">calculate tip</button>
+    </form>
+    <p></p>
+
+    <script>
+        let input_box=document.querySelector("input")
+        let btn = document.querySelector("button")
+        let para = document.querySelector("p")
+
+        btn.addEventListener("click",calculateTip)
+
+        function calculateTip(eventObj){
+            eventObj.preventDefault()
+            let value = input_box.value
+            let tip  = value*10/100
+            para.innerText = `Your Tip is ${tip}`
+            input_box.value=""
+
+        }
+    </script>
+</body>
+
+</html>

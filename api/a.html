@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         fetch("https://instagram-express-app.vercel.app/login" ,{
+            method: "POST" ,
+             headers:{
+                 "Content-Type" : "application/json"
+             } , 
+             body:JSON.stringify({
+                    "userName": "ramesh",
+                    "password": "1234"
+                })
+            } )
+            .then(res => res.json())
+            .then(data => {
+                console.log("Login success")
+               let token = data.token
+                fetch("https://instagram-express-app.vercel.app/user/history",{
+                    method: "GET",
+                    headers:{
+                        Token: token
+                    }
+                })
+                .then(res => res.json())
+                .then(info => {
+                    console.log("Books History fetched")
+
+                   for(let t of info.data){
+                       fetch(`https://instagram-express-app.vercel.app/books/${t.bookId}`,{
+                           method: "GET",
+                           headers:{
+                              Token: token
+                           }
+                       })
+                       .then(res => res.json())
+                       .then(data => {
+                        console.log(data) 
+                        console.log("########################")
+                       })
+                       .catch(err => console.log(err))
+                   }
+
+                })
+                .catch(err => console.log(err))
+            })
+            .catch(err => console.log(err))
+    </script>
+</body>
+</html>

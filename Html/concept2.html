@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ramesh{
+            color: green;
+            background-color: yellow;
+        }
+        .sohan{
+            color: grey;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="ramesh" id="pankaj">hello</h1>
+    <button>Change Me</button>
+
+    <script>
+        let heading = document.querySelector("h1")
+        let btn = document.querySelector("button")
+
+        btn.addEventListener("click",()=>{
+            // heading.className = "sohan"
+
+            // heading.style.cssText =`
+            // color: wheat;
+            // background-color:tomato;
+            // text-align:center
+            // `
+        })
+    </script>
+</body>
+</html>

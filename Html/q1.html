@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .signup {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: auto;
+
+        }
+
+        .signup label,
+        .signup input,
+        .signup button {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <form class="signup">
+        <div class="output"></div>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <label for="confirm-password">Confirm-Password:</label>
+        <input type="password" id="Confirm-password" name="Confirm-password">
+
+        <button type="submit">signup</button>
+    </form>
+
+
+    <script>
+
+        let input_boxes = document.querySelectorAll("input")
+        let form = document.querySelector("form")
+
+        let output = document.querySelector(".output")
+        for (let t of input_boxes) {
+          t.addEventListener("input", validate)
+        }
+
+        function validate(e) {
+            let element = e.target
+            let value = element.value
+            let id = element.id
+            element.style.outline = "none"
+
+            if (id == "username") {
+                element.style.border = value.length < 6 ? "2px solid red" : "2px solid green"
+            }
+
+            else if (id == "email") {
+                element.style.border = !(value.includes("@")&&value.includes(".")) ? "2px solid red" : "2px solid green"
+            }
+            else if (id == "password") {
+                element.style.border = value.length<8? "2px solid red" : "2px solid green"
+            }
+            else if (id == "Confirm-password") {
+                element.style.border = input_boxes[2].value !=input_boxes[3].value ? "2px solid red" : "2px solid green"
+            }
+        }
+
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault()
+            let password = input_boxes[2].value
+
+            output.innerText =  "*".repeat(password.length)
+        })
+
+    </script>
+</body>
+
+</html>

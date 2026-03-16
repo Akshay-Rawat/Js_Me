@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO</title>
+</head>
+<body>
+
+    <input type="text" id="task">
+    <button>Done</button>
+
+    <ul>
+        <li class="list"></li>
+    </ul>
+
+    <script>
+        let btn = document.querySelector("button")
+        let input = document.querySelector("#task")
+        let list = document.querySelector(".list")
+        
+        btn.addEventListener("click", fizz)
+        
+        function fizz() {
+            list.innerText = input.value
+            console.log(input.value)
+        }
+        let value =  list.innerText
+        let jsonData = JSON.stringify(value)
+        localStorage.setItem("data",jsonData)
+    </script>
+
+</body>
+</html>

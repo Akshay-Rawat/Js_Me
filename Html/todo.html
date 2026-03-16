@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #mytable{
+        border: 3px solid red;
+    }
+</style>
+<body>
+    <form action="">
+        <input type="text"> <br>
+        <button >add</button>
+        <table id="myTable" border="1">
+        </table>
+    </form>
+
+    <script>
+        let a = document.querySelector("input");
+        let b = document.querySelector("button");
+        let table = document.getElementById("myTable");
+
+        b.addEventListener("click", hey);
+
+        function hey(e) {
+            e.preventDefault(); 
+            let row = table.insertRow();
+            let cell = row.insertCell();
+            cell.textContent = a.value;
+
+            a.value = ""; 
+        }
+    </script>
+</body>
+
+</html>

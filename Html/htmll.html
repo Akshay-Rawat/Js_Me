@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+<button id="r">hey</button>
+    <script>
+let a = document.querySelector("button")
+    a.addEventListener("click",()=>{
+        document.body.style.backgroundColor="red"
+    })
+
+    let b = document.querySelector("#r")
+    setTimeout(()=>{
+    b.click()
+},2000)
+
+    </script>
+</body>
+</html>

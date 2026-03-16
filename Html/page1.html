@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>This is Me  </p>
+    <h1>Akshay
+    </h1>
+    <script>
+        let para = document.querySelector("p")
+        let heading = document.querySelector("h1")
+        let value1 = para.innerText
+        let value2 = heading.innerText
+        let obj = {
+            v1:value1,
+            v2:value2
+        }
+        
+        let jsonData = JSON.stringify(obj)
+        localStorage.setItem("data",jsonData)
+    </script>
+</body>
+</html>

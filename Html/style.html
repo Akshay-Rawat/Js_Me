@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=/, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playwrite+CU+Guides&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playwrite+CU+Guides&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <h1>Hello this is css</h1>
+    <input type="color">
+    <select id="dropdown">
+        <option value="left">left</option>
+        <option value="right">right</option>
+        <option value="center">center</option>
+    </select>
+
+    <script>
+        let input = document.querySelector("input")
+        let select = document.querySelector("#dropdown")
+
+        select.addEventListener("change", () => {
+            h1.style.textAlign = select.value
+        })
+        input.addEventListener("input", () => {
+            h1.style.color = input.value
+        })
+    </script>
+</body>
+
+</html>

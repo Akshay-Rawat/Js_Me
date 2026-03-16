@@ -1,10 +1,8 @@
 var a = Number(prompt("Enter no"));
-
 if(a===null){
     console.log("cancelled");
     
 }
-
 if(isNaN(a)){
     console.log("invalid")
 }

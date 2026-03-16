@@ -1,4 +1,4 @@
-
+var prompt = require('prompt-sync')()
 var a = Number(prompt("enter number for answer"))
     if (a > 0) {
         var rev = 0

@@ -1,0 +1,16 @@
+let day = 1
+let spend = 1
+let amt = 1000
+
+while (amt >= 0) {
+    if (day % 7 == 0) {
+        amt = amt - spend + Math.floor(spend / 2)
+    }
+    else {
+        amt = amt - spend
+    }
+    spend++
+    day++
+        console.log("Day:", day, "Balance:", amt);
+}
+console.log(day)

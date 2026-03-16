@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>0</p>
+    <button id="a">Btn1</button>
+    <button id="b">Btn2</button>
+    <button id="c">Btn3</button>
+    <button id="d">Btn4</button>
+    <button id="e">Btn5</button>
+    <button id="f">Btn6</button>
+
+    <script>
+        let btn = document.querySelectorAll("button")
+        let para = document.querySelector("p")
+        for (let t of btn) {
+            t.addEventListener("click", update)
+        }
+        let set = new Set()
+        function update(e) {
+            let clickedBtn = e.target
+            if (set.has(clickedBtn)) {
+                return
+            }
+            set.add(clickedBtn)
+            para.innerText = +para.innerText + 1
+        }
+
+    </script>
+</body>
+
+</html>

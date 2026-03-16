@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>To DO APP</h1>
+    <form>
+        <input type="text" placeholder="enter todo">
+        <button>add TODO</button>
+    </form>
+    <ol>
+    </ol>
+
+  <script>
+    let savedTasks = JSON.parse(localStorage.getItem("tasks")) ;
+    
+    let form = document.querySelector("form");
+    let input = document.querySelector("input");
+    let ol = document.querySelector("ol");
+
+   
+    for (let i = 0; i < savedTasks.length; i++) {
+        let li = document.createElement("li");
+        li.innerText = savedTasks[i];
+        ol.appendChild(li);
+    }
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        let value = input.value; 
+        
+        if (value !== "") { 
+           
+            let li = document.createElement("li");
+            li.innerText = value;
+            ol.appendChild(li);
+
+            savedTasks.push(value); 
+
+            localStorage.setItem("tasks", JSON.stringify(savedTasks));
+
+            input.value = "";
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -6,9 +6,9 @@ let k = Number(prompt("Value de k ki"))
 k = k % arr.length
 
 for (let i = 0; i < arr.length; i++) {
-    temp[i] = arr[(i+k)%arr.length]
+    // temp[i] = arr[(i+k)%arr.length]
+    temp[i] = arr[(i + arr.length - k) % arr.length]
+    // left rotation
 }
 console.log(temp);
 
-// temp[i] = arr[(i + arr.length - k) % arr.length]
-// left rotation

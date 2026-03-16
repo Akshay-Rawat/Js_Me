@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="divSection">
+        <p></p>
+    </div>
+    <button>Test</button>
+</body>
+<script>
+    let divSection = document.querySelector("div")
+    let btn = document.querySelector("button")
+
+    let id = setInterval(display,2000)
+    let count= 0 
+
+    function display(){
+        count++
+        let para = document.createElement("p")
+        para.innerText = "Hlo Pooku"
+        divSection.append(para)
+    }
+
+    setTimeout(()=>{
+        clearInterval(id)
+    },5000)
+</script>
+</html>

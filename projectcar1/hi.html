@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Gilroy';
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: cornflowerblue;
+    }
+
+    #card {
+        height: 400px;
+        width: 300px;
+        background-color: white;
+        padding: 30px;
+        text-align: center;
+    }
+
+    #card img {
+        height: 55%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+
+    #card h1 {
+        margin: 10px 0px;
+        font-size: 30px;
+    }
+
+    #card h5 {
+        margin: 20px;
+        color: red;
+        font-size: 25px;
+        margin: 10px
+    }
+
+    #btn-container {
+        text-align: center;
+        color: red;
+    }
+
+    #card button {
+        background-color: cadetblue;
+        color: black;
+        font-weight: 700;
+        padding: 12px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+
+   
+</style>
+
+<body>
+    <div id="card">
+
+        <img src="./images.jpg" alt="">
+        <h1>Developer</h1>
+        <h5>Stranger</h5>
+        <div id="btn-container">
+            <button id="add">Add Friend</button>
+          
+
+        </div>
+
+
+    </div>
+</body>
+<script>
+    let a = document.querySelector("h5")
+    let btn = document.querySelector("#add")
+  
+var flag =0
+    btn.addEventListener("click",function(){
+        if(flag==0){
+            a.innerText="Friends"
+            a.style.color="green"
+            btn.innerHTML = "Remove Friend"
+            flag=1
+        }else{
+              a.innerText="Stranger"
+            a.style.color="red"
+            flag=0
+            btn.innerHTML = "Add Friend"
+        }
+    })
+   
+</script>
+
+</html>
