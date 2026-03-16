@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onscroll="showCount()">
+    <p class="nc">Normal Count</p>
+    <p class="tc">throttle Count</p>
+    <p class="dc">Debounce Count</p>
+    <div style="height:2000px"></div>
+    <script>
+
+        const normal = document.querySelector(".nc")
+        const throttle = document.querySelector(".tc")
+        const Debounce = document.querySelector(".dc")
+
+        let nc = 0
+        let tc = 0
+        let dc = 0
+
+        const normalCount = () => {
+            nc++
+            normal.innerHTML = `normalcount:${nc}`
+        }
+
+        let akki = true
+        const throttleount = () => {
+            if (akki == true) {
+                tc++
+                throttle.innerHTML = `throttleCount ${tc}`
+                akki = false
+                setTimeout(() => {
+                    akki = true
+                }, 1000)
+            }
+        }
+
+        let interval;
+        function DebounceCount() {
+            clearTimeout(interval);
+            interval = setTimeout(() => {
+                dc++
+                Debounce.innerHTML = `debounce count${dc++}`
+            }, 1000)
+        }
+
+
+
+        const showCount = () => {
+            normalCount()
+            throttleount()
+            DebounceCount()
+        }
+
+    </script>
+</body>
+
+
+</html>

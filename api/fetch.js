@@ -1,6 +1,16 @@
-async function getData(){
-    let response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+const url = "https://jsonplaceholder.typicode.com/posts"
+const options = {
+    method: "POST",
+    body: JSON.stringify({ username: "eakki" }),
+    headers: myHeaders,
+};
+async function postData(){
+
+    const response = await fetch(url,options);
     let data = await response.json()
-    console.log(data);
+    console.log("Mydata",data)
 }
-getData()
+postData()
